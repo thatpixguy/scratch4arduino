@@ -1,0 +1,3 @@
+[submodule "processing"]
+	path = processing
+	url = git@github.com:firmata/processing.git
