@@ -1,19 +1,15 @@
 {	"extensionName": "A4S (Scratch for Arduino)",
 	"extensionPort": 12345,
 	"blockSpecs": [
-//		[" ", "set pin %n high", "pinHigh", 13],
-//		[" ", "set pin %n low", "pinLow", 13],
-//		[" ", "set pin %n as output", "pinOutput", 13],
-//		[" ", "set pin %n as input", "pinInput", 13],
-
-		[" ", "Configure pin %n as %m.inputOutput", "pinMode", 2, "input"],
-		[" ", "Digital write pin %n to %m.highLow", "digitalWrite", 13, "high"],
-		[" ", "Analog write pin %n to %n", "analogWrite", 11, 0],
-		["b", "Digital read pin %n", "digitalRead", 2],
-		["r", "Analog read pin %n", "analogRead", 0],
+		[" ", "configure pin %n as %m.inputOutput", "pinMode", 2, "input"],
+		[" ", "digital write pin %n to %m.highLow", "digitalWrite", 13, "high"],
+		[" ", "analog write pin %n to %n", "analogWrite", 11, 0],
+		[" ", "move servo on pin %n to %n degrees", "servoWrite", 11, 0],
+		["b", "digital read pin %n", "digitalRead", 2],
+		["r", "analog read pin %n", "analogRead", 0],
 	],
 	"menus": {
-		"inputOutput": ["input", "output", "pwm"],
+		"inputOutput": ["input", "output", "pwm", "servo"],
 		"highLow": ["high", "low"],
 	},
 }

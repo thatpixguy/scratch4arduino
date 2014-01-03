@@ -302,11 +302,16 @@ public static class  MyWriter implements Firmata.Writer {
 					arduino.pinMode(Integer.parseInt(parts[1]), Firmata.PWM);	
 					//System.out.println("pwm requested \n");					
 					}
-				//arduino.pinMode(Integer.parseInt(parts[1]), "input".equals(parts[2]) ? Firmata.INPUT : Firmata.OUTPUT); //replaced
+				if ("servo".equals(parts[2])) // added servo
+					{
+					arduino.pinMode(Integer.parseInt(parts[1]), Firmata.SERVO);	
+					}
 			} else if (cmd.equals("digitalWrite")) {
 				arduino.digitalWrite(Integer.parseInt(parts[1]), "high".equals(parts[2]) ? Firmata.HIGH : Firmata.LOW);
 			} else if (cmd.equals("analogWrite")) {// added pwm  
 				arduino.analogWrite(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]) );
+			} else if (cmd.equals("servoWrite")) {// added servo  
+				arduino.servoWrite(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]) );
 				
 				
 			} else if (cmd.equals("poll")) {
@@ -326,7 +331,7 @@ public static class  MyWriter implements Firmata.Writer {
 					{
 					refresh_rate_30msec = 200;
 					
-					
+				  /*	
 					if (arduino.refresh_arrived == 0)
 						{
 						if (DEBUG_ACTIVE )
@@ -335,6 +340,7 @@ public static class  MyWriter implements Firmata.Writer {
 						
 						}
 						else arduino.refresh_arrived =0;
+					*/
 					}
 					
 				if (DEBUG_ACTIVE )
@@ -343,7 +349,7 @@ public static class  MyWriter implements Firmata.Writer {
 					if (num_of_poll_reponse == 120)
 						{
 						num_of_poll_reponse=0;
-						System.out.println(" " + response +"refresh analog = "+ arduino.refresh_arrived +" ");
+						//System.out.println(" " + response +"refresh analog = "+ arduino.refresh_arrived +" ");
 					
 						}
 					}
