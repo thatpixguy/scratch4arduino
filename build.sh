@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 javac -classpath RXTXcomm.jar A4S.java processing/src/Firmata.java
 mkdir -p org/firmata
 cp processing/src/*.class org/firmata/
